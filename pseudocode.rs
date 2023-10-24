@@ -1,7 +1,12 @@
+// U 11
+// D 10
+// L  8
+// R 21
+
 fn main() {
     let mut vuln = false;
     let mut dir = b"R";
-    let mut buf = [];
+    let mut buf = "";
     loop {
         if vuln {
             print_vulnerable();
@@ -11,7 +16,7 @@ fn main() {
 
         let k = get_key();
         let a = asc(k);
-        buf += a;
+        buf += k;
         if buf.len() == 16 {
             buf = buf[8..];
         }
@@ -21,7 +26,7 @@ fn main() {
         } else if a == dir && !vuln {
             vuln = true;
         } else if a in b"UDLR" {
-            voln = false;
+            vuln = false;
             dir = a;
         } else if vuln {
             vuln = false;

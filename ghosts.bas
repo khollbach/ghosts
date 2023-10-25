@@ -41,7 +41,6 @@
  3100 if pix = 1 then color = c
  3110 plot x,y*2
  3120 plot x,y*2+1
- 3125 for tm = 1 to 500 : next : rem the emulator needs us to slow down
  3130 next x
  3140 next y
  3143 let x = 0 : y = 0
@@ -62,7 +61,6 @@
  4100 color = c
  4110 plot ix,iy*2
  4120 plot ix,iy*2+1
- 4130 for tm = 1 to 500 : next : rem the emulator needs us to slow down
  4140 next ix
  4150 next iy
  4170 return
@@ -97,13 +95,12 @@
  7080 gosub 8000 : rem draw_rectangle
  7090 return
 
-    0 rem' inclusive of both corners
+    0 rem inclusive of both corners
  8000 rem draw_rectangle(x1, y1, x2, y2)
  8010 for iy = y1 to y2
  8020 for ix = x1 to x2
  8030 plot ix,iy*2
  8040 plot ix,iy*2+1
- 8045 for tm = 1 to 500 : next : rem the emulator needs us to slow down
  8050 next ix
  8060 next iy
  8070 return
